@@ -1,0 +1,19 @@
+{% extends "layout.html" %} {% block content %} 
+<h1 class="center">WELCOME(FINGER SPELLED)</b></h1>
+<div class="col-container">
+<figure class="col">
+        <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" width="320px" height="320px">
+        <figcaption class="caption"><b>Our Purpose:</b></figcaption>
+    <figcaption class="caption">Here is where a description of our purpose would be</figcaption>
+</figure>
+<figure class="col">
+        <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" width="320px" height="320px">
+        <figcaption class="caption"><b>Your Purpose:</b></figcaption>
+    <figcaption class="caption">Here is where a description of user's purpose would be</figcaption>
+</figure>
+<figure class="col">
+        <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" width="320px" height="320px">
+        <figcaption class="caption"><b>What to do:</b></figcaption>
+    <figcaption class="caption">Here will be a description of the website's features</figcaption>
+</figure>
+{% endblock content %}
