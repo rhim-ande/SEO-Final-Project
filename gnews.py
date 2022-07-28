@@ -1,7 +1,9 @@
 import requests
+import os
 from random import sample
 
-apikey = "64b36a64f47414e042da2c88370dbcff"
+apikey = os.environ.get("fp_apikey")
+#"64b36a64f47414e042da2c88370dbcff"
 
 
 def get_articles(apikey):
