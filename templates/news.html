@@ -1,3 +1,24 @@
 {% extends "layout.html" %} {% block content %} 
-<h1 class="center">NEWS</b></h1>
+<h1 class="center pg-hd">NEWS</b></h1>
+<div class="col-container">
+<news-box class="">
+    <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" alt="">
+    <hd>Title of Article</hd>
+    <text>description of the news article:</text>
+</news-box>
+<news-box class="">
+    <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" alt="">
+    <hd>Title of Article</hd>
+    <text>description of the news article:</text>
+</news-box>
+<news-box class="">
+    <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" alt="">
+    <hd>Title of Article</hd>
+    <text>description of the news article:</text>
+</news-box>
+<news-box class="">
+    <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" alt="">
+    <hd>Title of Article</hd>
+    <text>description of the news article:</text>
+</news-box>
 {% endblock content %}

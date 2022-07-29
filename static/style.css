@@ -219,3 +219,36 @@ a.article-title:hover {
 .account-heading {
   font-size: 2.5rem;
 }
+
+news-box {
+  height: 250px;
+  width: 550px;
+  display: inline-block;
+  padding-right: 10px;
+  margin: 10px 30px;
+  left: 63px;
+  top: 304px;
+}
+
+news-box img {
+  width: 240px;
+  height: 210px;
+  background: #FFFFFF;
+  border: 6px solid #DB4C4C;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 5px;
+}
+
+news-box hd {
+  display: flex;
+  text-align: left;
+  font-size: 30px;
+}
+
+news-box text {
+  display: flex;
+  text-align: left;
+  font-size: 20px;
+  height: 60%;
+}
