@@ -10,9 +10,17 @@ import requests
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
 
-app.config['SECRET_KEY'] = '78de1af656d14fd39ee8e9ca98fd5989'
+app.config['SECRET_KEY'] = 'f6f17d71cf013f9d4d4e3c0f2cbbf4e2'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
+
+class Alphabet(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    english = db.Column(db.String(20), nullable=False)
+    img_name = db.Column(db.String(), nullable=False)
+
+    def __repr__(self):
+        return f"Alphabet('{self.english}', '{self.img_name}')"
 
 @app.route("/")
 @app.route("/homepage")
@@ -45,6 +53,11 @@ def flash_categories():
 
 @app.route("/activities")
 def activities():
+    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    for i in range(26):
+        card = Alphabet(english=alphabet[i], img_name=f"{alphabet[i]}.png")
+        db.session.add(card)
+        db.session.commit()
     return render_template('activities.html')
 
 if __name__ == '__main__':
