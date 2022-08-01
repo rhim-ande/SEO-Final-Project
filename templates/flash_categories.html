@@ -1,3 +1,39 @@
-{% extends "layout.html" %} {% block content %} 
-<h1 class="center">CATEGORIES FOR FLASHCARDS</b></h1>
+{% extends "layout.html" %} {% block content %}
+<a href="/activities">
+    <button type="button" class="btn-primary" style="background-color: rgb(248, 248, 230); color: black;">BACK</button>
+</a>
+<div class="col-container">
+    <a href="">
+        <div class="option">
+            <txt>Black American Sign Language (BASL)</txt>
+            <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" width="180px" height="180px" alt="">
+        </div>
+    </a>
+    <a href="">
+        <div class="option">
+            <txt>Alphabet <br> (ASL)</txt>
+            <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" width="180px" height="180px" alt="">
+        </div>
+    </a>
+    <a href="">
+        <div class="option">
+            <txt>Basics <br> (ASL)</txt>
+            <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" width="180px" height="180px" alt="">
+        </div>
+    </a>
+</div>
+<div class="col-container">
+    <a href="">
+        <div class="option">
+            <txt>Food <br> (ASL)</txt>
+            <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" width="180px" height="180px" alt="">
+        </div>
+    </a>
+    <a href="">
+        <div class="option">
+            <txt>Places and Time <br> (ASL)</txt>
+            <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" width="180px" height="180px" alt="">
+        </div>
+    </a>
+</div>
 {% endblock content %}

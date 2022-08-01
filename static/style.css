@@ -177,7 +177,7 @@ button{
   color: #444444;
 }
 
-a.article-title:hover {
+.article-title:hover {
   color: #428bca;
   text-decoration: none;
 }
@@ -234,10 +234,13 @@ news-box img {
   width: 240px;
   height: 210px;
   background: #FFFFFF;
-  border: 6px solid #DB4C4C;
   float: left;
   margin-right: 10px;
   margin-bottom: 5px;
+  border: solid 4px rgb(187, 32, 21);
+  border-radius: 25px;
+  text-align: center;
+  background-color:rgb(248, 74, 62);
 }
 
 news-box hd {
@@ -251,4 +254,31 @@ news-box text {
   text-align: left;
   font-size: 20px;
   height: 60%;
+}
+
+.option {
+  border: solid 5px rgb(187, 32, 21);
+  border-radius: 25px;
+  text-align: center;
+  background-color:rgb(248, 74, 62);
+  display: inline-block;
+  height: 280px;
+  width: 260px;
+  margin: 30px 80px;
+  position: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+.option img {
+  margin: 10px auto auto 35px;
+  display: block;
+}
+
+.option txt {
+  font-size: 20px;
+  color: black;
+  display: block;
 }
