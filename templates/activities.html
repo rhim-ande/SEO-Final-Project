@@ -1,9 +1,15 @@
 {% extends "layout.html" %} {% block content %} 
 <h1 class="center">ACTIVITIES</b></h1>
-
-
-<div class="center bt">
-        <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{url_for('flashcards', index=0)}}">Flashcards</button>
+<div class="col-container" style="padding: 1em 14em">
+<figure class="col" style="width: 45%; float:left;">
+    <a href="/flash_categories">Flashcards
+        <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" width="320px" height="320px" alt="">
+    </a>
+</figure>
+<figure class="col" style="width: 45%; float:right;">
+    <a href="/game">Game
+        <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" width="320px" height="320px" alt="">
+    </a>
+</figure>
 </div>
-
 {% endblock content %}
