@@ -10,9 +10,22 @@ import requests
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
 
-app.config['SECRET_KEY'] = '78de1af656d14fd39ee8e9ca98fd5989'
+app.config['SECRET_KEY'] = 'f6f17d71cf013f9d4d4e3c0f2cbbf4e2'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
+
+class Alphabet(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    english = db.Column(db.String(), nullable=False)
+    img_name = db.Column(db.String(), nullable=False)
+
+    def __repr__(self):
+        return f"Alphabet('{self.english}', '{self.img_name}')"
+
+'''
+class UserInput(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    suggestion = db.Column(db.String(), nullable=False) '''
 
 @app.route("/")
 @app.route("/homepage")
@@ -36,8 +49,13 @@ def game():
     return render_template('game.html')
 
 @app.route("/flashcards")
+#pass index variable to find english and asl in lists 
 def flashcards():
-    return render_template('flashcards.html')
+    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    images = ['A.PNG', 'B.PNG', 'C.PNG', 'D.PNG', 'E.PNG', 'F.PNG', 'G.PNG', 'H.PNG', 'I.PNG', 'J.PNG', 'K.PNG', 'L.PNG', 'M.PNG', 'N.PNG', 'O.PNG', 'P.PNG', 'Q.PNG', 'R.PNG', 'S.PNG', 'T.PNG', 'U.PNG', 'V.PNG', 'W.PNG', 'X.PNG', 'Y.PNG', 'Z.PNG']
+    #image string for html file 
+    img_string = f"{{ url_for('static', filename='/alphabet/'"+ "{images[0]}') }}"
+    return render_template('flashcards.html', card=alphabet[0], asl=img_string)
 
 @app.route("/flash_categories")
 def flash_categories():
@@ -45,6 +63,12 @@ def flash_categories():
 
 @app.route("/activities")
 def activities():
+    #pass parameter to indicate the index of the card we want
+    '''alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    for i in range(26):
+        card = Alphabet(english=alphabet[i], img_name=f"{alphabet[i]}.PNG")
+        db.session.add(card)
+        db.session.commit()'''
     return render_template('activities.html')
 
 if __name__ == '__main__':
