@@ -1,0 +1,20 @@
+{% block content %}
+    <h1 class="center">Matching Game</h1>
+    <div class="card-matching">
+      <img src="JPEG_example_flower" alt="Avatar" style="width:300px;height:300px;">
+    </div>
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <div class="form-group">
+                    {{ form.answer.label(class="form-control-label") }}
+                    {{ form.answer(class="form-control form-control-lg") }}
+                </div>
+            </fieldset>
+            <div class="form-group center">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+{% endblock content %}

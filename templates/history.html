@@ -1,3 +1,49 @@
 {% extends "layout.html" %} {% block content %} 
 <h1 class="center">HISTORY</b></h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <figure class ="videos">
+                <iframe class="frame-border" width="320" height="240"
+                src="https://www.youtube.com/watch?v=gjjktL2oOM0">
+                <figcaption>Video Description</figcaption>  
+                </iframe>
+            </figure>
+            <figure class ="videos"
+                <iframe class="frame-border" width="320" height="240"
+                src="https://www.youtube.com/watch?v=gjjktL2oOM0">
+                <figcaption>Video Description</figcaption>
+                </iframe>
+            </figure>
+        </div>
+        <div class="col">
+            <p>
+                Info goes Here
+            </p>
+        </div>
+        <div class="col">
+            <h2 class="center">BOOKS TO READ</b></h2>
+            <figure class= "books">
+                <img src= "JPEG_example_flower" width="320px" height="200px">
+                <figcaption class="caption"><b>{{ book1 }}</b></figcaption>
+                <figcaption class="caption">{{ url1 }}</figcaption>
+            </figure>
+            <figure class = "books">
+                <img src="JPEG_example_flower" width="320px" height="200px">
+                <figcaption class="caption"><b>{{ book2 }}</b></figcaption>
+                <figcaption class="caption">{{ url2 }}</figcaption>
+            </figure>
+            <figure class = "books">
+                <img src="JPEG_example_flower" width="320px" height="200px">
+                <figcaption class="caption"><b>{{ book3 }}</b></figcaption>
+                <figcaption class="caption">{{ url3 }}</figcaption>
+            </figure>
+
+        </div>
+    </div>
+</div>
+    
+   
+
+
 {% endblock content %}

@@ -51,6 +51,23 @@ def flashcards():
 def flash_categories():
     return render_template('flash_categories.html')
 
+@app.route("/matching")
+def matching():
+    points = 0
+    form = AnswerForm()
+    if answer == database:
+        points = points + 1
+        flash(f'Correct Answer! Current Score: {points}')
+    else:
+        points = points - 1
+        flash(f'Incorrect Answer. Current Score: {points}. Retype the correct answer: {database answer}')
+        if answer != database:
+            flash(f'Incorrect Answer. Retype the correct answer: {database answer}')
+        
+
+    return render_template('matching.html')
+
+
 @app.route("/activities")
 def activities():
     alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
