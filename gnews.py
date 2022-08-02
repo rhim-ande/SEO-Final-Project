@@ -2,15 +2,12 @@ import requests
 import os
 from random import sample
 
-apikey = os.environ.get("fp_apikey")
-#"64b36a64f47414e042da2c88370dbcff"
-
+apikey = os.environ.get('gn_apikey')
 
 def get_articles(apikey):
     url = "https://gnews.io/api/v4/search?q={}&lang={}&token={}".format("black sign language", "en", apikey)
     news = requests.get(url)
     news_data = news.json()
-    print(news_data)
     each_article = news_data['articles']
     articles_list = []
     for article in each_article:
