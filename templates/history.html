@@ -1,3 +1,44 @@
 {% extends "layout.html" %} {% block content %} 
 <h1 class="center">HISTORY</b></h1>
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <h2 class="center">VIDEOS TO WATCH</b></h2>
+            <figure class ="videos">
+                <iframe width="320" height="240" src="https://www.youtube.com/embed/gjjktL2oOM0" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+              
+            </figure>
+            <figure class ="videos">
+                <iframe width="320" height="240" src="https://www.youtube.com/embed/3HDm3kx3rhY" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        
+            </figure>
+            <figure class ="videos">
+            <iframe width="320" height="240" src="https://www.youtube.com/embed/ALW91e6WPTU" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </figure>
+        </div>
+        <div class="col">
+            <p>
+                Info goes Here
+            </p>
+        </div>
+        <div class="col">
+            <h2 class="center">BOOKS TO READ</b></h2>
+            <figure class= "books">
+                <img src= "{{ url_for('static', filename='JPEG_example_flower.jpg') }}" alt="flower" height="200" width="200">
+                <figcaption class="caption"><b>{{ book1 }}</b></figcaption>
+            </figure>
+            <figure class = "books">
+                <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" alt="flower" height="200" width="200">
+                <figcaption class="caption"><b>{{ book2 }}</figcaption>
+            </figure>
+            <figure class = "books">
+                <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" alt="flower" height="200" width="200">
+                <figcaption class="caption"><b>{{ book3 }}</b></figcaption>
+            </figure>
+
+        </div>
+    </div>
+</div>
+    
+
 {% endblock content %}
