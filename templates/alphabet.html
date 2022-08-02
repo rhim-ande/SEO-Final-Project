@@ -1,26 +1,26 @@
 {% extends "layout.html" %} {% block content %} 
 <h1 class="center">FLASHCARDS</b></h1>
 
-<h3>Hover over the image below:</h3>
+<h3 class="center">Hover over flashcard to see ASL sign</h3>
 
-<div class="flip-card">
+<div class="flip-card center-flashcard">
   <div class="flip-card-inner">
     <div class="flip-card-front flex-container">
-      <h1>{{ card }}</h1>
+      <h1 style="color:#000000;font-size:400%;">{{ card }}</h1>
     </div>
     <div class="flip-card-back">
-      <img src={{ asl }} alt="Black girl showing how to sign soup" style="width:300px;height:300px;">
+      <img src={{ asl }} style="width:100%;height:100%;">
     </div>
   </div>
 </div>
 
-<div class="center bt">
-        <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('alphabet', index=index+1) }}">Next</button>
+<div class="button-right">
+        <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('alphabet', index=index+1) }}">Next Flashcard</button>
 </div>
 
 {% if index > 0 %}
-<div class="center bt">
-        <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('alphabet', index=index-1) }}">Prev</button>
+<div class="button-left">
+        <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('alphabet', index=index-1) }}">Previous Flashcard</button>
 </div>
 {% endif %}
 {% endblock content %}
