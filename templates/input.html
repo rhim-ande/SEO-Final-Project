@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+{% block content %}
+    <h1 class="center">Improvement Request</h1>
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <div class="form-group">
+                    {{ form.name.label(class="form-control-label") }} {% if form.name.errors %} {{ form.name(class="form-control form-control-lg is-invalid") }}
+                    <div class="invalid-feedback"> {% for error in form.name.errors%} <span>{{error}}</span> {% endfor %} </div> {% else %} {{ form.name(class="form-control form-control-lg") }} {% endif %} <div class="form-group">
+                        {{ form.email.label(class="form-control-label") }} {% if form.email.errors %} {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback"> {% for error in form.email.errors%} <span>{{error}}</span> {% endfor %} </div> {% else %} {{ form.email(class="form-control form-control-lg") }} {% endif %}
+                    </div>
+                    {{ form.suggestion.label(class="form-control-label") }} {% if form.suggestion.errors %} {{ form.suggestion(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback"> {% for error in form.suggestion.errors%} <span>{{error}}</span> {% endfor %} </div> {% else %} {{ form.suggestion(class="form-control form-control-lg") }} {% endif %}
+                    </div>
+                    {{ form.new_info.label(class="form-control-label") }} {% if form.new_info.errors %} {{ form.new_info(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback"> {% for error in form.new_info.errors%} <span>{{error}}</span> {% endfor %} </div> {% else %} {{ form.new_info(class="form-control form-control-lg") }} {% endif %}
+                    </div>
+            </fieldset>
+            <div class="form-group center">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+{% endblock content %}

@@ -1,0 +1,26 @@
+{% extends "layout.html" %} {% block content %} 
+<h1 class="center">FLASHCARDS</b></h1>
+
+<h3>Hover over the image below:</h3>
+
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front flex-container">
+      <h1>{{ card }}</h1>
+    </div>
+    <div class="flip-card-back">
+      <img src={{ asl }} alt="Black girl showing how to sign soup" style="width:300px;height:300px;">
+    </div>
+  </div>
+</div>
+
+<div class="center bt">
+        <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('foods', index=index+1) }}">Next</button>
+</div>
+
+{% if index > 0 %}
+<div class="center bt">
+        <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('foods', index=index-1) }}">Prev</button>
+</div>
+{% endif %}
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% extends "layout.html" %} {% block content %}
+<a href="/activities">
+    <button type="button" class="btn-primary" style="background-color: rgb(248, 248, 230); color: black;">BACK</button>
+</a>
+<div class="col-container">
+    <div class="center bt">
+        <button type="submit" class="btn btn-primary padding_50" onclick="location.href='flash_categories'">BASL</button>
+    </div>
+    <div class="center bt">
+        <button type="submit" class="btn btn-primary padding_50" onclick="location.href='{{ url_for('alphabet', index=0)}}'">Alphabet</button>
+    </div>
+    <div class="center bt">
+        <button type="submit" class="btn btn-primary padding_50" onclick="location.href='{{ url_for('basics', index=0)}}'">Basics</button>
+    </div>
+</div>
+<div class="col-container">
+    <div class="center bt">
+        <button type="submit" class="btn btn-primary padding_50" onclick="location.href='{{ url_for('foods', index=0)}}'">Food</button>
+    </div>
+    <div class="center bt">
+        <button type="submit" class="btn btn-primary padding_50" onclick="location.href='flash_categories'">Places and Time</button>
+    </div>
+</div>
+{% endblock content %}
