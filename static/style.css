@@ -309,10 +309,11 @@ news-box text {
   text-align: center;
   background-color:rgb(248, 74, 62);
   display: inline-block;
-  height: 280px;
-  width: 260px;
-  margin: 30px 80px;
+  height: 80px;
+  width: 420px;
+  margin: 20px 8px;
   position: inherit;
+  padding: 10px;
 }
 
 a {
@@ -328,4 +329,11 @@ a {
   font-size: 20px;
   color: black;
   display: block;
+}
+
+.links {
+  color: white;
+  background-color: #f1b775;
+  vertical-align: top;
+  border: solid 3px #a56529;
 }
