@@ -1,3 +1,16 @@
 {% extends "layout.html" %} {% block content %} 
 <h1 class="center">CATEGORIES FOR FLASHCARDS</b></h1>
+
+<div class="center bt">
+        <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('alphabet', index=0) }}">Alphabet</button>
+</div>
+
+<div class="center bt">
+        <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('basics', index=0) }}">Basics</button>
+</div>
+
+<div class="center bt">
+        <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('foods', index=0) }}">Foods</button>
+</div>
+
 {% endblock content %}

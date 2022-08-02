@@ -15,12 +15,12 @@
 </div>
 
 <div class="center bt">
-        <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('flashcards', index=index+1) }}">Next</button>
+        <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('foods', index=index+1) }}">Next</button>
 </div>
 
 {% if index > 0 %}
 <div class="center bt">
-        <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('flashcards', index=index-1) }}">Prev</button>
+        <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('foods', index=index-1) }}">Prev</button>
 </div>
 {% endif %}
 {% endblock content %}
