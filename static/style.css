@@ -21,8 +21,8 @@ body {
 
 .flip-card {
   background-color: transparent;
-  width: 300px;
-  height: 300px;
+  width: 500px;
+  height: 600px;
   perspective: 1000px;
 }
 
@@ -48,8 +48,7 @@ body {
 }
 
 .flip-card-front {
-  background-color: #FFFFF;
-  color: black;
+  background-color: #FFFFFF;
 }
 
 .flip-card-back {
@@ -172,6 +171,14 @@ button{
   margin-top:20px;
 }
 
+.button-left {
+  float: left;
+}
+
+.button-right {
+  float: right;
+}
+
 .bt{
   margin-top:40px;
 }
@@ -188,6 +195,12 @@ button{
 
 .center {
   text-align: center;
+}
+
+.center-flashcard {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
 }
 
 .bg-steel {
