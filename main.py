@@ -1,12 +1,9 @@
 from flask import Flask, render_template, url_for, flash, redirect, request
-#from forms import RegistrationForm, LoginForm, GameForm
 from flask_behind_proxy import FlaskBehindProxy
 from flask_sqlalchemy import SQLAlchemy
-#from werkzeug.security import generate_password_hash, check_password_hash
-#from flask_login import UserMixin, login_user
-#from flask_login import LoginManager, login_required, current_user, logout_user
-from form2 import UserForm
+from forms import UserForm, AnswerForm
 import requests
+from card_lists import get_basics, get_alphabet, get_foods, get_basl
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
@@ -22,11 +19,6 @@ class Alphabet(db.Model):
 
     def __repr__(self):
         return f"Alphabet('{self.english}', '{self.img_name}')"
-
-'''
-class UserInput(db.Model):
-    id = db.Column(db.Integer, primary_key=True)
-    suggestion = db.Column(db.String(), nullable=False) '''
 
 @app.route("/")
 @app.route("/homepage")
@@ -50,35 +42,66 @@ def history():
 def resources():
     return render_template('resources.html')
 
-@app.route("/game")
-def game():
-    return render_template('game.html')
-
 @app.route("/alphabet/<index>")
 #pass index variable to find english and asl in lists 
 def alphabet(index):
     index = int(index)
-    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
-    images = ['A.PNG', 'B.PNG', 'C.PNG', 'D.PNG', 'E.PNG', 'F.PNG', 'G.PNG', 'H.PNG', 'I.PNG', 'J.PNG', 'K.PNG', 'L.PNG', 'M.PNG', 'N.PNG', 'O.PNG', 'P.PNG', 'Q.PNG', 'R.PNG', 'S.PNG', 'T.PNG', 'U.PNG', 'V.PNG', 'W.PNG', 'X.PNG', 'Y.PNG', 'Z.PNG']
+    cards = get_alphabet()
+    al = cards[0]#['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    images = cards[1]#['A.PNG', 'B.PNG', 'C.PNG', 'D.PNG', 'E.PNG', 'F.PNG', 'G.PNG', 'H.PNG', 'I.PNG', 'J.PNG', 'K.PNG', 'L.PNG', 'M.PNG', 'N.PNG', 'O.PNG', 'P.PNG', 'Q.PNG', 'R.PNG', 'S.PNG', 'T.PNG', 'U.PNG', 'V.PNG', 'W.PNG', 'X.PNG', 'Y.PNG', 'Z.PNG']
     #image string for html file 
     img_string = f"../static/alphabet/{images[index]}"
-    return render_template('alphabet.html', card=alphabet[index], asl=img_string, index=index)
+    return render_template('alphabet.html', card=al[index], asl=img_string, index=index)
 
 @app.route("/basics/<index>")
 def basics(index):
     index = int(index)
-    basics = ['where', 'why', 'how', 'when', 'which', 'what', 'you', 'us', 'me', 'them', 'parents', 'person', 'family', 'community', 'blue', 'yellow', 'orange', 'red', 'green', 'purple']
-    images = ['where.PNG', 'why.PNG', 'how.PNG', 'when.PNG', 'which.PNG', 'what.PNG', 'you.PNG', 'us.PNG', 'me.PNG', 'them.PNG', 'parents.PNG', 'person.PNG', 'family.PNG', 'community.PNG', 'blue.PNG', 'yellow.PNG', 'orange.PNG', 'red.PNG', 'green.PNG', 'purple.PNG']
+    cards = get_basics()
+    bas = cards[0]
+    images = cards[1]
     img_string = f"../static/basics/{images[index]}"
-    return render_template('basics.html', card=basics[index], asl=img_string, index=index)    
+    return render_template('basics.html', card=bas[index], asl=img_string, index=index)    
 
 @app.route("/foods/<index>")
 def foods(index):
     index = int(index)
-    foods = ['orange', 'pineapple', 'banana', 'apple', 'grapes', 'sour', 'sweet', 'spicy', 'disgust', 'tasty', 'cookies', 'sandwich', 'cake', 'soup', 'pancakes', 'snack', 'lunch', 'breakfast', 'dessert', 'dinner']
-    images =['orange.PNG', 'pineapple.PNG', 'banana.PNG', 'apple.PNG', 'grapes.PNG', 'sour.PNG', 'sweet.PNG', 'spicy.PNG', 'disgust.PNG', 'tasty.PNG', 'cookies.PNG', 'sandwich.PNG', 'cake.PNG', 'soup.PNG', 'pancakes.PNG', 'snack.PNG', 'lunch.PNG', 'breakfast.PNG', 'dessert.PNG', 'dinner.PNG']
+    cards = get_foods()
+    food = cards[0]
+    images = cards[1]
     img_string = f"../static/foods/{images[index]}"
-    return render_template('foods.html', card=foods[index], asl=img_string, index=index)    
+    return render_template('foods.html', card=food[index], asl=img_string, index=index)    
+
+@app.route("/basl/<index>")
+def basl(index):
+    index = int(index)
+    cards = get_basl()
+    ba = cards[0]
+    images = cards[1]
+    img_string = f"../static/basl/{images[index]}"
+    return render_template('basl.html', card=ba[index], asl=img_string, index=index)    
+
+@app.route("/game/<index><points>", methods=['GET', 'POST'])
+def game(index, points):
+    index = int(index)
+    alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
+    images = ['A.PNG', 'B.PNG', 'C.PNG', 'D.PNG', 'E.PNG', 'F.PNG', 'G.PNG', 'H.PNG', 'I.PNG', 'J.PNG', 'K.PNG', 'L.PNG', 'M.PNG', 'N.PNG', 'O.PNG', 'P.PNG', 'Q.PNG', 'R.PNG', 'S.PNG', 'T.PNG', 'U.PNG', 'V.PNG', 'W.PNG', 'X.PNG', 'Y.PNG', 'Z.PNG']
+    #keep track of points as they go, display points at the end of game 
+    #let them go to previous cards and change answers
+    #display a percentage of answers for them to find
+    points = int(points)
+    form = AnswerForm()
+    img_string = f"../static/alphabet/{images[index]}"
+    answered = False
+    if form.validate_on_submit():
+        answer = form.answer.data
+        if answer.lower() == alphabet[index].lower():
+            flash(f'Correct', 'success')
+            points += 1
+            answered = True
+        else:
+            flash(f'Incorrect', 'success')
+
+    return render_template('matching.html', form=form, asl=img_string, index=index, answered=answered, points=points)
 
 @app.route("/flash_categories")
 def flash_categories():

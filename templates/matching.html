@@ -1,0 +1,31 @@
+{% extends "layout.html" %}{% block content %}
+    <h1 class="center">Matching Game</h1>
+    <h3 class="center">Points: {{ points }}</h3>
+    <figure>
+        <div class="card-matching ">
+            <img src={{ asl }} alt={{ asl }} style="width:300px;height:300px;">
+        </div>
+    </figure>
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <div class="form-group">
+                    {{ form.answer.label(class="form-control-label") }}
+                    {{ form.answer(class="form-control form-control-lg") }}
+                </div>
+            </fieldset>
+            <div class="form-group center">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+
+    
+    {% if answered == True %}
+        <div class="button-right">
+            <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('game', index=index+1, points=points) }}">Next Card</button>
+        </div>
+    {% endif %}
+
+{% endblock content %} 
