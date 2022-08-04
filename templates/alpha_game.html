@@ -1,6 +1,6 @@
 {% extends "layout.html" %}{% block content %}
-    <h1 class="center">Matching Game</h1>
-    <h3 class="center">Points: {{ points }}</h3>
+    <h2 class="center">Earn points by typing the english translation of the signs pictured below!<h2>
+    <h3 class="center"><b>Points: {{ points }}</b></h3>
     <div class="fig-game">
         <div >
             <img src={{ asl }} alt={{ asl }} style="width:300px;height:300px;">
@@ -23,13 +23,13 @@
 
      {% if index > 0 %}
         <div class="button-left">
-            <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('game', index=index-1, points=points, visited=visited) }}">Prev Card</button>
+            <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('alpha_game', index=index-1, points=points, visited=visited) }}">Prev Card</button>
         </div>
     {% endif %}
 
     {% if index != 25 %}
         <div class="button-right">
-            <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('game', index=index+1, points=points, visited=visited) }}">Next Card</button>
+            <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('alpha_game', index=index+1, points=points, visited=visited) }}">Next Card</button>
         </div>
     {% endif %}
 

@@ -1,0 +1,43 @@
+{% extends "layout.html" %}{% block content %}
+    <h2 class="center">Earn points by typing the english translation of the signs pictured below!<h2>
+    <h3 class="center"><b>Points: {{ points }}</b></h3>
+    <div class="fig-game">
+        <div >
+            <img src={{ asl }} alt={{ asl }} style="width:300px;height:300px;">
+        </div>
+    </div>
+    <div class="content-section">
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <div class="form-group">
+                    {{ form.answer.label(class="form-control-label") }}
+                    {{ form.answer(class="form-control form-control-lg") }}
+                </div>
+            </fieldset>
+            <div class="form-group center">
+                {{ form.submit(class="btn btn-primary") }}
+            </div>
+        </form>
+    </div>
+
+     {% if index > 0 %}
+        <div class="button-left">
+            <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('food_game', index=index-1, points=points, visited=visited) }}">Prev Card</button>
+        </div>
+    {% endif %}
+
+    {% if index != 25 %}
+        <div class="button-right">
+            <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('food_game', index=index+1, points=points, visited=visited) }}">Next Card</button>
+        </div>
+    {% endif %}
+
+    {% if index == 25 %}
+        <div class="button-right">
+            <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('game_result', points=points, cat='foods') }}">Next Card</button>
+        </div>
+    {% endif %}
+
+
+{% endblock content %} 

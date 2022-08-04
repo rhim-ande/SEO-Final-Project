@@ -10,7 +10,7 @@ fieldset {
 
 body {
   /*we should change this font to match the one in the images if possible*/
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'DIN Condensed', sans-serif;
 }
 
 .flex-container {
@@ -37,6 +37,13 @@ body {
 
 .flip-card:hover .flip-card-inner {
   transform: rotateY(180deg);
+}
+
+.cat {
+  display:inline-block;
+  width: 50px;
+  padding:0px 200px;
+  margin: 0px 70px 0px 0px;
 }
 
 .flip-card-front, .flip-card-back {
@@ -67,6 +74,12 @@ p {
 
 input[type="text"], input[type="password"], input[type="select"], textarea {
   background-color : #f8dda3; 
+}
+
+.reset {
+  background-color: unset;
+  border: 0px;
+  padding: 0px;
 }
 
 .alert-error {
@@ -104,36 +117,63 @@ input[type="text"], input[type="password"], input[type="select"], textarea {
 }
 
 .col-container {
-  display: table; 
-  width: 100%;
-  text-align: center; 
-
+    text-align: center;
+    margin: 20px auto;
+    padding-top: 10px;
 }
 
-.home{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60vh;
+.col-con {
+    display: table; 
+    width: 100%;
+    text-align: center; 
+}
+
+.home {
+    animation-duration: 1.2s;
+    animation-name: slidein;
+    vertical-align: top;
 }
 
 .col {
-  display: table-cell;
+  vertical-align:top;
 }
 
-figure {
+.fig-game {
     display: inline-block;
     margin-right: 5px;
-    margin-left: 5px;
-    padding:15px;
+    /*margin-left: 5px;
+    padding:15px;*/
+
+    margin-left: 35%;
+    padding:35px;
+
     border: solid 5px rgb(187, 32, 21);
     border-radius: 25px;
     text-align: center;
     background-color:rgb(248, 74, 62)
 }
 
+figure {
+    display: inline-block;
+    border: solid 5px rgb(187, 32, 21);
+    border-radius: 25px;
+    background-color: rgb(248, 74, 62);
+}
+
+.fig {
+    margin: 0px 20px;
+    width: 30%;
+    padding: 20px;
+}
+
+.fig-history {
+    margin-right: 5px;
+    margin-left: 5px;
+    padding:15px;
+    text-align: center;
+}
+
 figure img {
-    vertical-align: top;
     border: solid 3px #a56529;
     border-radius: 25px;
 }
@@ -144,6 +184,7 @@ figure figcaption {
     font-size:20px;
     color: rgb(248, 248, 230);
 }
+
 
 a figcaption { 
     font-size:20px;
@@ -184,10 +225,20 @@ button{
   margin-top:40px;
 }
 
+.btn-big{
+  width: 400px;
+  height: 200px;
+  margin: 50px;
+  font-size: 48px;
+}
+
+.btn-small{
+  padding: 15px 40px;
+}
+
 .btn-primary{
   background-color:rgb(248, 74, 62);
-  padding: 15px 40px;
-  border: 1px solid  rgb(248, 243, 230);
+  border: 3px solid  rgb(248, 243, 230);
 }
 
 .btn-primary:hover{
@@ -223,9 +274,76 @@ button{
 .site-header .navbar-nav .nav-link.active {
   font-weight: 500;
 }
+.no-marg {
+  margin: auto;
+}
+
+.resources {
+    animation-duration: 1s;
+    animation-name: fadeIn;
+}
+.delay1 {
+    animation-duration: 2s;
+    animation-name: fadeIn;
+}
+
+.delay2 {
+    animation-duration: 3s;
+    animation-name: fadeIn; 
+}
+
+.learn {
+    list-style-image: url("images/smiley.gif");
+}
+
+.orgs {
+    list-style-image: url("images/smiley.gif");
+}
+
+.linkbox {
+    display: inline-block;
+    width: 400px;
+    margin: 10px 10px;
+    vertical-align: top;
+    padding: 10px 0px 20px 40px;
+    text-align: left;
+}
+
+.linkbox a {
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    line-height: 2em;
+}
+
+.linkbox img {
+    margin-right: 15px;
+}
+
+.linkbox txt {
+    color: black;
+    background-color: white;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+    margin-left: -40px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+    }
+  100% {
+      opacity: 1;
+    }
+}
+
 
 .content-section {
-  background:  rgb(224, 120, 35);
+  background:  rgb(248, 74, 62);
   width: 50%;
   margin:auto;
   padding: 10px 20px;
@@ -330,8 +448,19 @@ news-box text {
   padding: 10px;
 }
 
-a {
+.res-a {
   text-decoration: none;
+  background-color: rgb(248, 74, 62);
+  color: rgb(248, 248, 230);
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.title {
+    width: 420px;
+    text-transform: capitalize;
+    font-size: 22px;
+    margin: 0px 5px;
 }
 
 .option img {

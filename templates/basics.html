@@ -1,8 +1,6 @@
 {% extends "layout.html" %} {% block content %} 
 <h1 class="center">FLASHCARDS</b></h1>
-
 <h3 class="center">Hover over flashcard to see ASL sign</h3>
-
 <div class="flip-card center-flashcard">
   <div class="flip-card-inner">
     <div class="flip-card-front flex-container">
@@ -14,16 +12,15 @@
   </div>
 </div>
 
-
 {% if index != 19 %}
-<div class="button-right">
-        <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('basics', index=index+1) }}">Next Flashcard</button>
-</div>
+  <div class="button-right">
+    <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('basics', index=index+1) }}">Next Flashcard</button>
+  </div>
 {% endif %}
 
 {% if index > 0 %}
-<div class="button-left">
-        <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('basics', index=index-1) }}">Previous Flashcard</button>
-</div>
+  <div class="button-left">
+    <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('basics', index=index-1) }}">Previous Flashcard</button>
+  </div>
 {% endif %}
 {% endblock content %}
