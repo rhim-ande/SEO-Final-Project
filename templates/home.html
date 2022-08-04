@@ -1,19 +1,18 @@
-{% extends "layout.html" %} {% block content %} 
-<h1 class="center">WELCOME(FINGER SPELLED)</b></h1>
+{% extends "layout.html" %} {% block content %} <h1 class="center">WELCOME(FINGER SPELLED)</b></h1>
 <div class="col-container">
-<figure class="col">
-        <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" width="320px" height="320px">
-        <figcaption class="caption"><b>Our Purpose:</b></figcaption>
-    <figcaption class="caption">Here is where a description of our purpose would be</figcaption>
-</figure>
-<figure class="col">
-        <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" width="320px" height="320px">
-        <figcaption class="caption"><b>Your Purpose:</b></figcaption>
-    <figcaption class="caption">Here is where a description of user's purpose would be</figcaption>
-</figure>
-<figure class="col">
-        <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" width="320px" height="320px">
-        <figcaption class="caption"><b>What to do:</b></figcaption>
-    <figcaption class="caption">Here will be a description of the website's features</figcaption>
-</figure>
-{% endblock content %}
+    <figure class="col home">
+        <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" alt="" width="300px" height="300px">
+        <figcaption class="reset"><b>Our Purpose:</b></figcaption>
+        <figcaption> We seek to increase awareness, knowledge, and support about and towards the Black deaf community, Black hard of hearing (HoH) community, and Black American Sign Language (BASL). </figcaption>
+    </figure>
+    <figure class="col home">
+        <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" alt="" width="300px" height="300px">
+        <figcaption class="reset"><b>Your Purpose:</b></figcaption>
+        <figcaption> Our website is for the Black community as BASL is similar to African-American Vernacular English (AAVE) in that both should primarily be used by community members. Non-community members are still welcome to explore our website as long as they keep this in mind. </figcaption>
+    </figure>
+    <figure class="col home">
+        <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" alt="" width="300px" height="300px">
+        <figcaption class="reset"><b>What To Do:</b></figcaption>
+        <figcaption> History - Learn about the history of the Black deaf community, Black HoH community, and BASL.<br> News - Read current articles about the Black deaf community, Black HoH community, and BASL.<br> Activities - Learn BASL through flashcards and practice it by playing a matching game.<br> Other Resources - View various resources like related websites and organizations. </figcaption>
+    </figure>
+</div> {% endblock content %}
