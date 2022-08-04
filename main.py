@@ -12,13 +12,15 @@ app.config['SECRET_KEY'] = 'f6f17d71cf013f9d4d4e3c0f2cbbf4e2'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 
-class Alphabet(db.Model):
+class Input(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    english = db.Column(db.String(), nullable=False)
-    img_name = db.Column(db.String(), nullable=False)
+    name = db.Column(db.String(), nullable=False)
+    email = db.Column(db.String(), nullable=False)
+    suggestion = db.Column(db.String(), nullable=False)
+    resource = db.Column(db.String(), nullable=False)
 
     def __repr__(self):
-        return f"Alphabet('{self.english}', '{self.img_name}')"
+        return f"Input('{self.name}', '{self.email}')"
 
 @app.route("/")
 @app.route("/homepage")
@@ -29,9 +31,14 @@ def home():
 def news():
     return render_template('news.html')
 
-@app.route("/input")
+@app.route("/input", methods=['GET', 'POST'])
 def input():
     form = UserForm()
+    if form.validate_on_submit():
+        input = Input(name = form.name.data, email=form.email.data, suggestion=form.suggestion.data, resource=form.new_info.data)
+        db.session.add(input)
+        db.session.commit()
+        flash('Thank you for submitting an improvement form!', 'success')
     return render_template('input.html', form=form)
 
 @app.route("/history")
