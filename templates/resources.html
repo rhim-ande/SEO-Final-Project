@@ -1,23 +1,128 @@
-{% extends "layout.html" %} {% block content %} <h1 class="center">MORE RESOURCES</b></h1>
-<div class="col-container">
-    <div class="option resources">
-        <txt>Content Creators:</txt>
-    </div>
-    <div class="option resources">
-        <txt>BASL Learning Sites:</txt>
-    </div>
-    <div class="option resources">
-        <txt>Black Deaf/Hard of Hearing Organizations:</txt>
-    </div>
+{% extends "layout.html" %} {% block content %}
+<h1 class="center">MORE RESOURCES</b></h1>
+<div class="col-container no-marg resources">
+    <figure class="reset">
+        <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" alt="" width="200px" height="200px">
+    </figure>
+    <figure class="reset">
+        <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" alt="" width="200px" height="200px">
+    </figure>
+    <figure class="reset">
+        <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" alt="" width="200px" height="200px">
+    </figure>
 </div>
-<div class="col-container">
-    <div class="option resources links" style="height:1100px">
-        <txt> https://www.tiktok.com/@itscharmay?lang=en https://www.tiktok.com/@bossladyky?lang=en https://www.tiktok.com/@_itstherealjade?lang=en https://www.tiktok.com/@deaffamilymatters?lang=en https://www.tiktok.com/@dime.seray?lang=en https://www.tiktok.com/@bripierre?lang=en https://www.tiktok.com/@cortezharris?lang=en https://www.tiktok.com/@djdeaftunez?lang=en https://www.tiktok.com/@emoedits444?lang=en https://www.tiktok.com/@nazanne?lang=en https://www.tiktok.com/@ricks.sun?lang=en https://www.tiktok.com/@shaheemsanchez?lang=en https://www.tiktok.com/@slntwrlddd?lang=en https://www.tiktok.com/@justmecameil?lang=en https://www.tiktok.com/@destineydutton?lang=en https://www.tiktok.com/@alishastover12?lang=en https://www.tiktok.com/@jazieperry43?lang=en https://www.tiktok.com/@bree.k.jones?lang=en </txt>
-    </div>
-    <div class="option resources links" style="height:1100px">
-        <txt> The Black ASL Project Link: https://www.gallaudet.edu/center-for-black-deaf-studies/black-asl-project/ Joseph C. Hill Link: https://www.josephchill.com/black-asl SIGNING BLACK in AMERICA Link: https://www.talkingblackinamerica.org/signing-black-in-america/ Black Deaf History Link: https://www.deafvideo.tv/?s=black+deaf+history&submit= Still I Rise! with Dr. Glenn Anderson https://media.gallaudet.edu/media/ODIA+Still+I+Rise%21+with+Dr.+Glenn+Anderson+-+2+27+14/1_0mcqyhu9/67454751 Black Deaf Culture Through the Lens of History https://dcmp.org/learn/366-black-deaf-culture-through-the-lens-of-black-deaf-history A brief history of Black Deaf people in America https://www.hearinglikeme.com/a-brief-history-of-black-deaf-people-in-america/ Health disparities among Black deaf and hard of hearing Americans as compared to Black hearing Americans: A descriptive cross-sectional study https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8757936/ A Guide to Disability Rights Laws https://www.ada.gov/cguide.htm </txt>
-    </div>
-    <div class="option resources links" style="height:1100px">
-        <txt> SUPPORT BLACK DEAF BUSINESS! Tons of variety, check it out! https://www.blackdeafcenter.com/business **Create link to Business links https://convorelay.com/blm-resources/ HEARD (Support currently and formerly incarcerated deaf/disabled folks!) https://behearddc.org/donate/ National Black Deaf Advocates (NBDA) Link: https://www.nbda.org/ Black Deaf Center Link: https://www.blackdeafcenter.com/ Deaf Refuge Advocacy https://www.deafrefugeeadvocacy.org/?fbclid=IwAR1jVBSPFEq-lX1OdZJGSIUyknsLG-7ckTofNtFwQU1fbbBVpfUJ1ZpB8U8 Mano a Mano https://manoamanoinc.org/en/about-us/ Affordable Housing for Deaf, DeafBlind, Hard-of-Hearing, Deaf+ individuals and families who have low income. https://www.dcc-nm.org/ Center For Black Deaf Studies at Gallaudet University https://www.gallaudet.edu/center-for-black-deaf-studies/ **Create a link to organizations links https://convorelay.com/blm-resources/ </txt>
-    </div>
+<div class="col-container no-marg delay1">
+    <figure class="title">Content Creators!</figure>
+    <figure class="title">Sites to learn more!</figure>
+    <figure class="title">Black Deaf & Hard of Hearing Orgs!</figure>
+</div>
+<div class="col-container no-marg delay2">
+    <figcaption class="linkbox">
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@itscharmay?lang=en">@itscharmay</a>
+            <br>
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@bossladyky?lang=en">@bossladyky</a>
+            <br>
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@_itstherealjade?lang=en">@_itstherealjade</a>
+            <br>
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@deaffamilymatters?lang=en">@deaffamilymatters</a>
+            <br>
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@dime.seray?lang=en">@dime.seray</a>
+            <br>
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@bripierre?lang=en">@bripierre</a>
+            <br>
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@cortezharris?lang=en">@cortezharris</a>
+            <br>
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@djdeaftunez?lang=en">@djdeaftunez</a>
+            <br>
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@emoedits444?lang=en">@emoedits444</a>
+            <br>
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@nazanne?lang=en">@nazanne</a>
+            <br>
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@ricks.sun?lang=en">@ricks.sun</a>
+            <br>
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@shaheemsanchez?lang=en">@shaheemsanchez</a>
+            <br>
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@slntwrlddd?lang=en">@slntwrlddd</a>
+            <br>
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@justmecameil?lang=en">@justmecameil</a>
+            <br>
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@destineydutton?lang=en">@destineydutton</a>
+            <br>
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@alishastover12?lang=en">@alishastover12</a>
+            <br>
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@jazieperry43?lang=en">@jazieperry43</a>
+            <br>
+            <img src="../static/lists/tiktok.png" alt="" width="40px" height="40px">
+            <a href="https://www.tiktok.com/@bree.k.jones?lang=en">@bree.k.jones</a>
+    </figcaption>
+    <figcaption class="linkbox">
+            <a href="https://www.gallaudet.edu/center-for-black-deaf-studies/black-asl-project/">The Black ASL Project</a></li>
+            <br>
+            <br>
+            <a href="https://www.josephchill.com/black-asl">Joseph C. Hill</a> </li>
+            <br>
+            <br>
+            <a href="https://www.talkingblackinamerica.org/signing-black-in-america/">SIGNING BLACK in AMERICA documentary</a> </li>
+            <br>
+            <br>
+            <a href="https://www.deafvideo.tv/?s=black+deaf+history&submit=">Black Deaf History</a> </li>
+            <br>
+            <br>
+            <a href="https://media.gallaudet.edu/media/ODIA+Still+I+Rise%21+with+Dr.+Glenn+Anderson+-+2+27+14/1_0mcqyhu9/67454751">Still I Rise! with Dr. Glenn Anderson</a> </li>
+            <br>
+            <br>
+            <a href="https://dcmp.org/learn/366-black-deaf-culture-through-the-lens-of-black-deaf-history">Black Deaf Culture Through the Lens of History</a> </li>
+            <br>
+            <br>
+            <a href="https://www.hearinglikeme.com/a-brief-history-of-black-deaf-people-in-america/">A brief history of Black Deaf people in America</a> </li>
+            <br>
+            <br>
+            <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8757936/">Health disparities among Black deaf and hard of hearing Americans as compared to Black hearing Americans: A descriptive cross-sectional study</a> </li>
+            <br>
+            <br>
+            <a href="https://www.ada.gov/cguide.htm">A Guide to Disability Rights Laws</a></li>
+    </figcaption>
+    <figcaption class="linkbox">
+            <txt>Black Deaf/HoH Business:</txt>
+            <br>
+            <br>
+            <a href="https://www.blackdeafcenter.com/business">Black Deaf Center Businesses</a>
+            <br>
+            <a href="https://convorelay.com/blm-resources/">convo: Black Deaf Businesses</a>
+            <br>
+            <br>
+            <txt>Organizations:</txt>
+            <br>
+            <br>
+            <a href="https://behearddc.org/donate/">HEARD (Support currently and formerly incarcerated deaf/disabled folks!)</a></li>
+            <br>
+            <a href="Link: https://www.nbda.org/">National Black Deaf Advocates (NBDA)</a></li>
+            <br>
+            <a href="Link: https://www.blackdeafcenter.com/">Black Deaf Center</a></li>
+            <br>
+            <a href="https://www.deafrefugeeadvocacy.org/?fbclid=IwAR1jVBSPFEq-lX1OdZJGSIUyknsLG-7ckTofNtFwQU1fbbBVpfUJ1ZpB8U8">Deaf Refuge Advocacy</a></li>
+            <br>
+            <a href="https://manoamanoinc.org/en/about-us/">Mano a Mano</a></li>
+            <br>
+            <a href="https://www.dcc-nm.org/">Affordable Housing for Deaf, DeafBlind, Hard-of-Hearing, Deaf+ individuals and families who have low income.</a></li>
+            <br>
+            <a href="https://www.gallaudet.edu/center-for-black-deaf-studies/">Center For Black Deaf Studies at Gallaudet University</a></li>
+    </figcaption>
 </div> {% endblock content %}
