@@ -7,7 +7,7 @@ import requests
 from gbooks import get_books
 from gnews import get_articles
 import os
-apikey = os.environ.get('gn_apikey')
+apikey = "df397044c42df8687c3c5a26d9542632"
 
 from card_lists import get_basics, get_alphabet, get_foods, get_basl
 
