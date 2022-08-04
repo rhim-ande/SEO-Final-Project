@@ -17,6 +17,7 @@ def get_articles(apikey):
             articles_list.append([article['title'], article['description'],
                                  article['url'], article['source']['name']])
 
-    results = sample(articles_list, 3)
+    results = sample(articles_list, 4)
 
     return results
+

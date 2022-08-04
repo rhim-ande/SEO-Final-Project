@@ -3,7 +3,14 @@ from flask_behind_proxy import FlaskBehindProxy
 from flask_sqlalchemy import SQLAlchemy
 from forms import UserForm, AnswerForm
 import requests
+
+from gbooks import get_books
+from gnews import get_articles
+import os
+apikey = os.environ.get('gn_apikey')
+
 from card_lists import get_basics, get_alphabet, get_foods, get_basl
+
 
 app = Flask(__name__)
 proxied = FlaskBehindProxy(app)
@@ -29,7 +36,8 @@ def home():
 
 @app.route("/news")
 def news():
-    return render_template('news.html')
+    articles = get_articles(apikey)
+    return render_template('news.html', art1=articles[0][0], art2=articles[1][0], art3=articles[2][0], art4=articles[3][0], d1=articles[0][1], d2=articles[1][1], d3=articles[2][1], d4=articles[3][1], link1=articles[0][2], link2=articles[1][2], link3=articles[2][2], link4=articles[3][2])
 
 @app.route("/input", methods=['GET', 'POST'])
 def input():
@@ -43,7 +51,8 @@ def input():
 
 @app.route("/history")
 def history():
-    return render_template('history.html')
+    books = get_books()
+    return render_template('history.html', book1=books[0][0], book2=books[1][0], book3=books[2][0], url1=books[0][1], url2=books[1][1], url3=books[2][1])
 
 @app.route("/resources")
 def resources():

@@ -1,44 +1,77 @@
 {% extends "layout.html" %} {% block content %} 
-<h1 class="center">HISTORY</b></h1>
+<h2 class="center pg-hd">HISTORY<h2>
 <div class="container">
     <div class="row">
-        <div class="col">
+        <div class="col-4">
             <h2 class="center">VIDEOS TO WATCH</b></h2>
             <figure class ="videos">
-                <iframe width="320" height="240" src="https://www.youtube.com/embed/gjjktL2oOM0" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
+                <iframe width="320" height="240" src="https://www.youtube.com/embed/ALW91e6WPTU" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> 
               
             </figure>
             <figure class ="videos">
-                <iframe width="320" height="240" src="https://www.youtube.com/embed/3HDm3kx3rhY" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="320" height="240" src="https://www.youtube.com/embed/gjjktL2oOM0" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         
             </figure>
             <figure class ="videos">
-            <iframe width="320" height="240" src="https://www.youtube.com/embed/ALW91e6WPTU" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <iframe width="320" height="240" src="https://www.youtube.com/embed/3HDm3kx3rhY" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </figure>
         </div>
-        <div class="col">
-            <p>
-                Info goes Here
+        <div class="col-8">
+        <h2 class="center">ABOUT</h2>
+            <p class="history">
+                The birth of Black American Sign Language (BASL) can be traced back to the American South during
+U.S. segregation. While northern states were varied in their implementation of segregated schooling,
+a majority of southern states implemented segregated educational programs and schooling
+for black deaf children. After the end of segregation in the United States, integration measures closed black schools and black students were
+required to go to what was previously 'whites-only' schools. <br>
+The National Black Deaf Advocates (NBDA) became the first the official advocacy organization for
+Black Deaf and Hard of Hearing Americans in response to a lack of support, resources, and representation in Black Organizations and Deaf/Disability Organizations during the Civil Rights Movement.
+In these environments arose conflict and confusion because black deaf students
+signing with BASL could not understand white deaf students signing with ASL.<br>
+Black American Sign Language was not respected as a valid form of language and expression,
+and through a combination of assimilation, compliance and a lack of resources, it was almost forgotten.
+But, despite extreme measures to 1) erase the history and existence of BASL and 2) silence the black deaf community,
+many persons and families held onto the language and have continued to pass it down from generation to generation,
+evolving and expanding, similar to AAVE.<br>
+It is important to not only preserve the history of Black Deaf and Hard of Hearing (HoH) communities and struggles,
+and BASL, but to also understand the ways in which we can further support our black deaf and HoH family, friends and folks and recognize,
+understand, and resist the continued struggles, discrimination, abuse and lack of representation and awareness afforded to black deaf and HoH communities.
+Through the efforts of Dr. Joseph C. Hill and the (other) authors of 'The Hidden Treasure of Black ASL: Its History and Structure',
+the first study on and recording of BASL was published.
             </p>
-        </div>
-        <div class="col">
-            <h2 class="center">BOOKS TO READ</b></h2>
-            <figure class= "books">
-                <img src= "{{ url_for('static', filename='JPEG_example_flower.jpg') }}" alt="flower" height="200" width="200">
-                <figcaption class="caption"><b>{{ book1 }}</b></figcaption>
-            </figure>
-            <figure class = "books">
-                <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" alt="flower" height="200" width="200">
-                <figcaption class="caption"><b>{{ book2 }}</figcaption>
-            </figure>
-            <figure class = "books">
-                <img src="{{ url_for('static', filename='JPEG_example_flower.jpg') }}" alt="flower" height="200" width="200">
-                <figcaption class="caption"><b>{{ book3 }}</b></figcaption>
-            </figure>
-
         </div>
     </div>
 </div>
-    
+
+<h2 class="center">BOOKS TO READ</h2>
+    <div class ="container">
+        <div class="row">
+            <div class="col-4">
+            <figure class= "books">
+                <a href="{{ url1 }}">
+                <img src= "{{ url_for('static', filename='Book_image.png') }}" alt="flower" height="100" width="100">
+                <figcaption class="caption"><b>{{ book1 }}</b></figcaption>
+                </a>
+            </figure>
+            </div>
+            <div class="col-4">
+            <figure class = "books">
+                <a href="{{ url2 }}">
+                <img src="{{ url_for('static', filename='Book_image.png') }}" alt="flower" height="100" width="100">
+                <figcaption class="caption"><b>{{ book2 }}</b></figcaption>
+                </a>
+            </figure>
+            </div>
+            <div class="col-4">
+            <figure class = "books">
+                <a href="{{ url3 }}">
+                <img src="{{ url_for('static', filename='Book_image.png') }}" alt="flower" height="100" width="100">
+                <figcaption class="caption"><b>{{ book3 }}</b></figcaption>
+                </a>
+            </figure>
+            </div>
+        </div>
+    </div>
+
 
 {% endblock content %}
