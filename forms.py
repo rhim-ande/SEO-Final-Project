@@ -8,11 +8,17 @@ class AnswerForm(FlaskForm):
     submit = SubmitField('Submit')
 
 class UserForm(FlaskForm):
-    name = StringField('Username',
+    name = StringField('Name',
                            validators=[DataRequired(), Length(min=2)])
     email = StringField('Email',
                         validators=[DataRequired(), Email()])
-    suggestion = StringField('Do you have any suggestions for our website? Please enter below:')
-    new_info = StringField('Is there any information you would like to share that we do not already have on the website? Please provide a link to a new resource or describe it below:')
+    suggestion = StringField('Do you have any suggestions for our website? Please enter below:', validators=[DataRequired()])
+    new_info = StringField('Is there any information you would like to share that we do not already have on the website? Please provide a link to a new resource or describe it below:', validators=[DataRequired()])
     
     submit = SubmitField('Submit Input Request')
+
+class ActivitiesForm(FlaskForm):
+    flashcards = SelectField('Flashcard Categories', choices=['Alphabet', 'Food', 'Basics', 'BASL'])
+    game = SelectField('Game Categories', choices=['Alphabet', 'Food', 'Basics', 'BASL'])
+    submit = SubmitField('Start Flashcards')
+    submit = SubmitField('Start Game')
