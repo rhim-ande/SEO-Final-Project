@@ -3,8 +3,8 @@ from random import sample
 
 
 def get_books():
-    url = "https://www.googleapis.com/books/v1/volumes?q={}+intitle:{}".
-    format("black deaf culture", "Black")
+    url = "https://www.googleapis.com/books/v1/volumes?q={}+intitle:{}".format(
+        "black deaf culture", "Black")
     books = requests.get(url)
     books_data = books.json()
     individual_books = books_data['items']

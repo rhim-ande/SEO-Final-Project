@@ -108,6 +108,7 @@ input[type="text"], input[type="password"], input[type="select"], textarea {
   display: table; 
   width: 100%;
   text-align: center; 
+
 }
 
 .home{
@@ -125,7 +126,7 @@ figure {
     display: inline-block;
     margin-right: 5px;
     margin-left: 5px;
-    padding:35px;
+    padding:15px;
     border: solid 5px rgb(187, 32, 21);
     border-radius: 25px;
     text-align: center;
@@ -146,7 +147,7 @@ figure figcaption {
 }
 
 a figcaption { 
-    font-size:30px;
+    font-size:20px;
     background-color: #f1b775;
     color:white;
     vertical-align:top;
@@ -270,7 +271,7 @@ button{
 news-box {
   height: 250px;
   width: 550px;
-  display: inline-block;
+  display: inline-table;
   padding-right: 10px;
   margin: 10px 30px;
   left: 63px;
@@ -337,3 +338,6 @@ a {
   vertical-align: top;
   border: solid 3px #a56529;
 }
+
+
+
