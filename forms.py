@@ -23,7 +23,7 @@ class UserForm(FlaskForm):
                            ' to a new resource or describe it below:',
                            validators=[DataRequired()])
 
-    submit = SubmitField('Submit Input Request')
+    submit = SubmitField('Submit Improvement Request')
 
 
 class ActivitiesForm(FlaskForm):

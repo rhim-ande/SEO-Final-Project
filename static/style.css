@@ -9,8 +9,11 @@ fieldset {
 }
 
 body {
-  /*we should change this font to match the one in the images if possible*/
-  font-family: 'DIN Condensed', sans-serif;
+  font-family: 'Bahnschrift SemiBold';
+}
+
+.history-p {
+  font-size: 25px;
 }
 
 .flex-container {
