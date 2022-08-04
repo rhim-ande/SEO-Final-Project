@@ -1,0 +1,7 @@
+{% extends "layout.html" %}{% block content %}
+    <h1 class="center">Your Final Score:{{ points }} / {{ total }} {{ percentage }}% </h1>
+    
+    <div>
+            <button type="submit" class="btn btn-primary padding_50" onclick=location.href="{{ url_for('game', index=0, points=0, visited=0) }}">Start Over</button>
+    </div>
+{% endblock content %} 

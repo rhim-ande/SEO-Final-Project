@@ -80,9 +80,19 @@ def basl(index):
     img_string = f"../static/basl/{images[index]}"
     return render_template('basl.html', card=ba[index], asl=img_string, index=index)    
 
-@app.route("/game/<index><points>", methods=['GET', 'POST'])
-def game(index, points):
+#visited = [False] * 26
+@app.route("/game/<index><points><visited>", methods=['GET', 'POST'])
+def game(index, points, visited):
     index = int(index)
+    visited = int(visited)
+    '''if index == 0 and points == 0:
+        for v in visited:
+            v = False'''
+    #figure out how/when to reset the "visited" thingy
+    #make visited a number instead of a list so that it can just be compared to index 
+    # if visited > index don't increase points when they get it right 
+    # pass visited parameter back and forth just like the index parameter 
+    # increase visited when answered is True
     alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z']
     images = ['A.PNG', 'B.PNG', 'C.PNG', 'D.PNG', 'E.PNG', 'F.PNG', 'G.PNG', 'H.PNG', 'I.PNG', 'J.PNG', 'K.PNG', 'L.PNG', 'M.PNG', 'N.PNG', 'O.PNG', 'P.PNG', 'Q.PNG', 'R.PNG', 'S.PNG', 'T.PNG', 'U.PNG', 'V.PNG', 'W.PNG', 'X.PNG', 'Y.PNG', 'Z.PNG']
     #keep track of points as they go, display points at the end of game 
@@ -96,12 +106,30 @@ def game(index, points):
         answer = form.answer.data
         if answer.lower() == alphabet[index].lower():
             flash(f'Correct', 'success')
-            points += 1
+            if not visited > index:
+                points += 1
+                visited += 1
             answered = True
         else:
             flash(f'Incorrect', 'success')
 
-    return render_template('matching.html', form=form, asl=img_string, index=index, answered=answered, points=points)
+    return render_template('matching.html', form=form, asl=img_string, index=index, points=points, visited=visited)
+
+@app.route("/game_result<points><cat>")
+def game_result(points, cat):
+    percentage = 0
+    total = 0
+    if cat == "alphabet":
+        percentage = (26 - points)/26 * 100
+        total = 26
+    if cat == "basics" or cat == "foods":
+        percentage = (20 - points)/20 * 100
+        total = 20
+    if cat == "basl":
+        percentage = (10 - points)/10 * 100
+        total = 10
+
+    return render_template('game_result.html', percentage=percentage, points=points, total=total)
 
 @app.route("/flash_categories")
 def flash_categories():
